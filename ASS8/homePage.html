@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="https://fonts.cdnfonts.com/css/tt-hoves-pro-trial" rel="stylesheet">
+    <title>Kazakhstan's First Digital Rehabilitation Center</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/tt-hoves-pro-trial');
+        body{
+            font-family: 'TT Hoves Pro Trial', sans-serif;
+        }
+        .hero{
+                min-height: 100vh;
+                color: #204B72;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background:url('assets/land.png') center/cover no-repeat;
+            }
+        .hero h1{
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background-color: #9db4c0;
+            border: none;
+        }
+        .navbar-custom {
+            background: #A8D5BA;
+            font-weight: bold;
+            color: #204B72;        
+        }
+        .navbar-custom ul li a{
+            color: #204B72;   
+        }
+
+            .autocomplete-suggestions {
+                display: none;
+                top: 100%; 
+                width: 100%;
+                background-color: #fff;
+                border: 1px solid #ced4da;
+                list-style: none;
+                padding: 0;
+                max-height: 150px;
+                overflow-y: auto; 
+            }
+
+            .autocomplete-suggestions li {
+                padding: 0.5rem;
+                cursor: pointer;
+            }
+
+            .autocomplete-suggestions li:hover {
+                background-color: #f8f9fa;
+            }
+
+            .form-control:focus + .autocomplete-suggestions {
+                display: block;
+            }
+            #regbutton{
+                background-color: #204B72;
+                color: white;
+            }
+
+            #tech {
+                background-color: #204B72;
+                width: 100%;
+                overflow: hidden;
+            }
+    
+            .carousel-item img {
+                height: 100vh;
+                width: 100%;
+                object-fit: cover;
+            }
+            .circle {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .circle img {
+                width: 150x;
+                height: 150px;
+                object-fit: cover;
+            }
+            .why-us h3 {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #204B72;
+    
+            }
+            
+            
+
+            .why-us p {
+                font-size: 0.9rem;
+                color: #204B72;
+            }
+            #whyus {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                }
+            .trusted {
+                background-color: #fff;
+                padding: 50px 0;
+            }
+
+            .trusted h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #333;
+                letter-spacing: 0.5px;
+            }
+            .trusted .logo {
+                max-height: 100px; 
+                max-width: 100px;
+                object-fit: contain;
+                margin: 10px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .trusted .logo:hover {
+                transform: scale(1.1); 
+            }
+
+            #doveryut{
+                color: #204B72;
+            }
+            #patients-progress-bar {
+                background: linear-gradient(90deg, #A8D5BA, #204B72); 
+                border-radius: 5px; 
+            }
+
+            .progress {
+                background-color: #f3f6f9; 
+                border-radius: 5px; 
+                overflow: hidden; 
+            }
+
+            #patients-helped h2 {
+                font-size: 1.8rem; 
+                font-weight: bolder; 
+                margin-bottom: 20px;
+            }
+
+            #patients-helped #patients-count {
+                color: #204B72; 
+                font-weight: bold; 
+            }
+
+            #goal-text {
+                font-style: italic;
+                color: #6c757d; 
+            }
+            #regbutton {
+                background-color: #204B72;
+                color: white;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 10px 20px;
+                border-radius: 8px;
+                transition: 0.3s;
+                max-width: 230px; 
+                width: 100%; 
+                text-align: center;
+                margin: 15px auto; 
+            }
+            .footer {
+                background-color: #204B72; 
+            }
+
+            .footer a {
+                transition: 0.3s;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
+                color: #A8D5BA;
+            }
+
+
+            @media (max-width: 768px) {
+                .trusted .logo {
+                    max-height: 80px;   
+                    max-width: 80px;
+                }
+                .hero{
+                    padding-top: 100px; 
+
+                }
+                .navbar-custom{
+                    height:60px;
+                }
+                .navbar-brand img {
+                    content: url("assets/logomini.png");
+                    padding-bottom: 10px; 
+                }
+                .navbar-toggler {
+                    transform: scale(0.9);
+                }
+                #regbutton {
+                    font-size: 0.9rem;
+                    padding: 8px 16px;
+                    max-width: 200px;
+                }
+                        
+                
+
+            }
+    
+            @media (max-width: 576px) {
+                .navbar-custom {
+                    height: 35px; 
+                    padding: 2px 8px; 
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .navbar-brand {
+                    height: 25px; 
+                    display: flex;
+                    align-items: center;
+                }
+
+                .navbar-brand img {
+                    content: url("assets/logomini.png"); 
+                    max-height: 30px;
+                }
+
+                .navbar-toggler {
+                    transform: scale(0.6);
+                    padding: 3px;
+                }
+                #regbutton {
+                    font-size: 0.85rem;
+                    padding: 6px 14px;
+                    max-width: 180px;
+                }
+               
+            }
+
+
+
+            @media (max-width: 1200px) {
+                .nav-link {
+                    font-size: 15px;
+                }
+            }
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-custom navbar-expand-lg shadow-sm fixed-top">
+        <div class="container" id="cont">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logofull.png" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="services.html" data-bs-toggle="dropdown">Услуги</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html" class="dropdown-item">Послеоперационная реабилитация</a></li>
+                            <li><a href="services.html" class="dropdown-item">Лечение хронических заболеваний</a></li>
+                            <li><a href="services.html" class="dropdown-item">Спортивная реабилитация</a></li>
+                            <li><a href="services.html" class="dropdown-item">Профилактическое оздоровление</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Блог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">О клинике</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Программы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Личный кабинет</a>
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center position-relative" action="">
+                    <input type="search" placeholder="Поиск" class="form-control me-2">
+                    <ul class="autocomplete-suggestions position-absolute w-100">
+                        <li>Программы физической реабилитации</li>
+                        <li>Группы поддержки ментального здоровья</li>
+                        <li>Советы по восстановлению после операций</li>
+                    </ul>
+                    <input type="submit" value="Поиск" class="btn btn-secondary">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="container">
+            <h1 class="pb-5"><strong>Мы работаем сегодня, чтобы улучшить ваше завтра!</strong></h1>
+            <p>Центр реабилитации после инсульта, болезней, травм и операций.<br> Мы поможем Вам восстановиться!</p>
+            <div class="text-center">
+                <a href="contactpage.html" class="btn btn-primary btn-sm" id="regbutton">
+                    <strong>Зарегистрироваться на приём</strong>
+                </a>
+                
+            </div>
+            
+            
+        
+        </div>
+    </div>
+    
+    <section class="container-fluid p-0" id="tech">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block" src="assets/1.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block" src="assets/2.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block" src="assets/3.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block" src="assets/4.png">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block" src="assets/5.png">
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </a>
+        </div>
+    </section>
+    <section class="why-us py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" id="whyush2"><strong>Почему выбирают нас?</strong></h2>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-3 col-sm-6 advantage mb-4" id="whyus">
+                    <div class="circle mx-auto mb-3">
+                        <img src="assets/circle1.jpg" class="img-fluid rounded-circle">
+                    </div>
+                    <h3>Экспертный подход</h3>
+                    <p>Наши специалисты имеют многолетний опыт в области реабилитации и передовые знания.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 advantage mb-4" id="whyus">
+                    <div class="circle mx-auto mb-3">
+                        <img src="assets/circle2.jpg" class="img-fluid rounded-circle">
+                    </div>
+                    <h3>Инновационные технологии</h3>
+                    <p>Мы применяем VR/AR, IoT-устройства и носимые гаджеты для ускорения реабилитации.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 advantage mb-4" id="whyus">
+                    <div class="circle mx-auto mb-3">
+                        <img src="assets/circle3.jpg" class="img-fluid rounded-circle">
+                    </div>
+                    <h3>Комфортная среда</h3>
+                    <p>Создаем условия, где пациенты чувствуют себя как дома, окружённые заботой и вниманием.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 advantage mb-4" id="whyus">
+                    <div class="circle mx-auto mb-3">
+                        <img src="assets/circle4.jpg" class="img-fluid rounded-circle">
+                    </div>
+                    <h3>Гарантия результатов</h3>
+                    <p>Ориентируемся на достижение максимального восстановления и долгосрочный эффект.</p>
+                </div>
+                <a href="innovation.html" class="btn btn-lg" id="regbutton"><strong>Изучить наши технологии</strong></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trusted py-5">
+        <div class="container text-center">
+            <h2 class="text-uppercase mb-4">
+                Нам <span id="doveryut">доверяют</span>
+            </h2>
+            <hr class="mb-5" style="width: 60px; margin: 0 auto; border: 1px solid #ccc;">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-auto">
+                    <img src="assets/kff.png" class="logo" >
+                </div>
+                <div class="col-auto">
+                    <img src="assets/nbf.jpg" class="logo">
+                </div>
+                <div class="col-auto">
+                    <img src="assets/tennis.jpg" class="logo" >
+                </div>
+                <div class="col-auto">
+                    <img src="assets/wfrk.jpg" class="logo">
+                </div>
+                <div class="col-auto">
+                    <img src="assets/qhf.png" class="logo" >
+                </div>
+                <div class="col-auto">
+                    <img src="assets/лфя.png" class="logo">
+                </div>
+                <div class="col-auto">
+                    <img src="assets/ntc.center.png" class="logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-5" id="patients-helped">
+        <div class="container text-center">
+            <h2 class="mb-4">Количество пациентов, которым мы уже помогли</h2>
+        
+            <div class="progress mx-auto" style="width: 50%; height: 30px;">
+                <div 
+                    class="progress-bar" 
+                    id="patients-progress-bar" 
+                    role="progressbar" 
+                    style="width: 48%;" 
+                    aria-valuenow="7205" 
+                    aria-valuemin="0" 
+                    aria-valuemax="15000">
+                </div>
+            </div>
+        
+            <p class="mt-3 fw-bold fs-4" id="patients-count">7205 из 15000</p>
+            <p class="text-muted" id="goal-text">Цель: 15,000 пациентов</p>
+        </div>
+    </section>
+    <footer class="footer bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">DARU</h5>
+                    <p>Первый цифровой реабилитационный центр в Казахстане.</p>
+                </div>
+    
+                
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Главная</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Услуги</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">О нас</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+    
+                
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Контакты</h5>
+                    <p><i class="bi bi-telephone"></i> +7 (708) 531-41-80</p>
+                    <p><i class="bi bi-envelope"></i> info@daru.kz</p>
+                    <p><i class="bi bi-geo-alt"></i> Астана, Казахстан</p>
+                </div>
+            </div>
+    
+            <hr class="border-light my-3">
+    
+            
+            <div class="text-center">
+                <a href="www.facebook.com" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="www.instagram.com" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="www.telegram.com" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+    
+            
+            <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2025 DARU. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="rehabcenter.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    
+     

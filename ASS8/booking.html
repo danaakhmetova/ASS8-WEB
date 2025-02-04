@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Личный кабинет</title>
+</head>
+<style>
+     body {
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #204B72;
+        }
+        .autocomplete-suggestions {
+            display: none; 
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            list-style: none;
+            padding: 0;
+            max-height: 150px;
+            overflow-y: auto; 
+        }
+
+        .autocomplete-suggestions li {
+                padding: 0.5rem;
+                cursor: pointer;
+        }
+        .autocomplete-suggestions li:hover {
+                background-color: #f8f9fa;
+            }
+
+            .autocomplete-suggestions {
+                display: none;
+                top: 100%; 
+                width: 100%;
+                background-color: #fff;
+                border: 1px solid #ced4da;
+                list-style: none;
+                padding: 0;
+                max-height: 150px;
+            }
+            .autocomplete-suggestions li {
+                padding: 0.5rem;
+                cursor: pointer;
+                color: #123456;
+            }
+
+            .autocomplete-suggestions li:hover {
+                background-color: #f8f9fa;
+            }
+
+            .form-control:focus + .autocomplete-suggestions {
+                display: block;
+            }
+            .navbar-custom .nav-link,
+            .navbar-custom .navbar-brand {
+                color: white; 
+                font-weight: 500;
+            }
+            .btn{
+                background-color: #204B72;
+                color: white;
+                border: none;
+                
+            }
+            .btn:hover{
+                background-color: #A8D5BA;
+            }
+            .header{
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background: linear-gradient(rgba(32, 75, 114, 0.6), rgba(32, 75, 114, 0.6)), url('assets/dovolniy-klient.jpg') center/cover no-repeat;
+            } 
+            h2{
+                color: #fff;
+            }
+            section {
+                background-color: white;
+                margin: 20px auto;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                max-width: 1100px;
+            }
+            h2 {
+                color: #204B72;
+                border-bottom: 2px solid #204B72;
+                padding-bottom: 5px;
+            }
+            .services-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .services-list li {
+                background: #A8D5BA;
+                color: #204B72;
+                padding: 10px;
+                margin: 5px 0;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            button {
+                background-color: #204B72;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                display: block;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                background-color: #A8D5BA;
+            }
+            select {
+                width: 200px;
+                padding: 10px;
+                font-size: 16px;
+                border: 2px solid #204B72;
+                border-radius: 5px;
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }
+
+
+            select:hover {
+                border-color: #204B72
+            }
+            .btn-change-bg{
+                width: 100px;
+                height: 35px;
+                background-color: #A8D5BA;
+                color: #fff;
+                font-size: 14px;
+                padding: 4px;
+                border: none;
+                border-radius: 4px;
+            }
+            #currentDateTime {
+                font-weight: bold;
+                color: #204B72;
+            }
+            .profile-text p{
+                color: #123456;
+            }
+            input{
+                border: 1px solid #123456;
+                background-color: white;
+            }
+            @media (max-width: 768px) {
+                section {
+                    width: 90%;
+                }
+
+                h2 {
+                    font-size: 20px;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 12px;
+                }
+            }
+                        .footer {
+                background-color: #204B72; 
+            }
+            .footer a {
+                transition: 0.3s;
+            }
+
+            .footer a:hover {
+                text-decoration: underline;
+                color: #A8D5BA;
+            }
+            #availableDate{
+                color: #204B72;
+                font-weight: 700;
+            }
+            @media (max-width: 1200px) {
+                .nav-link {
+                    font-size: 14px;
+                }
+            }
+            p{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                
+            }
+            #patientAgeInput{
+                height: 40px;
+                margin-top: 12px;
+            }
+           
+            
+</style>
+<body>
+    <nav class="navbar navbar-custom navbar-expand-lg shadow-sm fixed-top">
+        <div class="container" id="cont">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logomini.png" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="services.html" data-bs-toggle="dropdown">Услуги</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html" class="dropdown-item">Послеоперационная реабилитация</a></li>
+                            <li><a href="services.html" class="dropdown-item">Лечение хронических заболеваний</a></li>
+                            <li><a href="services.html" class="dropdown-item">Спортивная реабилитация</a></li>
+                            <li><a href="services.html" class="dropdown-item">Профилактическое оздоровление</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Блог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">О клинике</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Программы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homePage.html">Главная</a>
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center position-relative" action="">
+                    <input type="search" placeholder="Поиск" class="form-control me-2">
+                    <ul class="autocomplete-suggestions position-absolute w-100">
+                        <li>Программы физической реабилитации</li>
+                        <li>Группы поддержки ментального здоровья</li>
+                        <li>Советы по восстановлению после операций</li>
+                    </ul>
+                    <input type="submit" value="Поиск" class="btn btn-secondary">
+                    <button onclick="changeBackground()" class="btn-change-bg m-2">Theme</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <h1 id="welcomeMessage"></h1>
+        <h1 class="px-5 text-uppercase fw-bold">Личный кабинет</h1>
+        <h4 id="clinicName"></h4>
+    </div>
+    <div id="profile" class="d-flex mt-5">
+        <section class="profile-text col-md-5 me-5">
+            <h2>Профиль пациента</h2>
+            <p><strong>Имя:</strong> <span id="patientName"></span></p>
+            <p><strong>Возраст:</strong> <span id="patientAge"></span></p>
+            <p><strong>Регистрация:</strong> <span id="patientRegistration"></span></p>
+            <p><strong>Диагноз:</strong> <span id="patientDiagnosis"></span></p>
+            <p><strong>Предоставленные услуги:</strong> <span id="services"></span></p>
+        </section>
+        <section class="phone-validate col-md-4 ms-3">
+            <h2>Мы с вами свяжемся!</h2>
+            <input type="text" id="phoneInput" placeholder="Введите номер телефона" class="mt-3">
+            <button onclick="validatePhoneNumber()" class="btn-validate mt-3">Продолжить</button>
+            <p id="phoneMessage" class="mt-3"></p>
+        </section>
+    </div>
+
+    <section id="services">
+        <h2>Список услуг</h2>
+        <ul id="servicesList"></ul>
+    </section>
+    <section id="treatmentSelection">
+        <h2>Выбор метода лечения</h2>
+        <label for="diseaseType">Выберите тип заболевания:</label>
+        <select id="diseaseType">
+            <option value="rehab">Послеоперационная реабилитация</option>
+            <option value="chronic">Лечение хронических заболеваний</option>
+            <option value="sports">Спортивная реабилитация</option>
+            <option value="prevention">Профилактическое оздоровление</option>
+            <option value="other">Другое</option>
+        </select>
+        <button onclick="selectTreatment()" class="btn-treatment">Определить метод лечения</button>
+        <p id="treatmentResult"></p>
+    </section>
+    <section id="discounts">
+        <h2>Акции и скидки</h2>
+        <p class="lead">Каждой возрастной категории разные бонусы, введите свой возраст и узнайте сумму скидки:</p>
+        <div class="container d-flex">
+            <input type="number" id="patientAgeInput" placeholder="Введите возраст пациента" class="me-4">
+            <button onclick="checkDiscount()">Проверить скидку</button>
+        </div>
+        <p id="offerText" class="ms-3"></p>
+    </section>    
+
+    <section id="recovery">
+        <h2>Статус восстановления</h2>
+        <p class="lead">Проверьте свой статус:</p>
+        <p id="recoveryStatus"></p>
+        <button onclick = "showRecoveryInfo()" class="btn-recovery">Показать статус</button>
+    </section>
+    <div class="container-service d-flex">
+        <section id="search" class="col-md-4 me-3">
+            <h2>Поиск услуг</h2>
+            <p class="lead"> Найдите желаемою услугу:</p>
+            <input type="text" class="search-service-input mt-3" id="servicesInput" placeholder="Введите название услуги">
+            <button class="mt-3" onclick="checkService()">Найти</button>
+            <p class="my-3"><strong>Результат поиска:</strong> <span id="resultingMessage"></span></p>
+        </section>
+        <section id="serviceCheck" class="col-md-5 ms-5">
+            <h2>Проверка услуги</h2>
+            <p class="lead">Проверьте, доступна ли услуга?</p>
+            <input type="text" id="serviceInput" placeholder="Введите название услуги" class="mt-3">
+            <button onclick = "checkServiceAvailble()" class="mt-3">Проверить</button>
+            <p id="resultMessage" class="my-3"></p>
+        </section>
+    </div>
+    <section id="consultation">
+        <h2>Доступные даты для записи</h2>
+        <p><strong>Текущая дата и время:</strong> <span id="currentDateTime"></span></p>
+        <p><strong>Ближайшая доступная дата:</strong> <span id="availableDate"></span></p>
+        <div class="buttons d-flex justify-content-between">
+            <button onclick="setBookingDate()" class="btn-booking">Обновить дату</button>
+            <button onclick = "bookConsultation()" class="btn-register">Записаться</button>
+        </div>
+        <p id="message" class="my-3"></p>
+    </section>
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">DARU</h5>
+                    <p>Первый цифровой реабилитационный центр в Казахстане.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Главная</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Услуги</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">О нас</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">Контакты</h5>
+                    <p><i class="bi bi-telephone"></i> +7 (708) 531-41-80</p>
+                    <p><i class="bi bi-envelope"></i> info@daru.kz</p>
+                    <p><i class="bi bi-geo-alt"></i> Астана, Казахстан</p>
+                </div>
+            </div>
+            <hr class="border-light my-3">
+            <div class="text-center">
+                <a href="www.facebook.com" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="www.instagram.com" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="www.telegram.com" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2025 DARU. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="rehabcenter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
